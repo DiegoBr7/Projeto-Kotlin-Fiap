@@ -22,6 +22,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
+import com.example.paginalogin.R
+
 //import com.example.trabalhokotlin.R
 
 @Composable
@@ -187,16 +189,36 @@ fun LoginPage() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IconButton(onClick = { /* TODO: Implement Social Media login */ }) {
-
+                    Icon(
+                        painter = painterResource(id = R.drawable.gmail), // Substitua pelo nome do recurso correto
+                        contentDescription = "Gmail",
+                        modifier = Modifier.size(25.dp),
+                        tint = Color.Unspecified
+                    )
                 }
                 IconButton(onClick = { /* TODO: Implement Social Media login */ }) {
-
+                    Icon(
+                        painter = painterResource(id = R.drawable.facebook), // Substitua pelo nome do recurso correto
+                        contentDescription = "Facebook",
+                        modifier = Modifier.size(25.dp),
+                        tint = Color.Unspecified
+                    )
                 }
                 IconButton(onClick = { /* TODO: Implement Social Media login */ }) {
-
+                    Icon(
+                        painter = painterResource(id = R.drawable.google), // Substitua pelo nome do recurso correto
+                        contentDescription = "Google",
+                        modifier = Modifier.size(25.dp),
+                        tint = Color.Unspecified
+                    )
                 }
                 IconButton(onClick = { /* TODO: Implement Social Media login */ }) {
-
+                    Icon(
+                        painter = painterResource(id = R.drawable.instagram), // Substitua pelo nome do recurso correto
+                        contentDescription = "Instagram",
+                        modifier = Modifier.size(25.dp),
+                        tint = Color.Unspecified
+                    )
                 }
             }
             Spacer(modifier = Modifier.height(24.dp))
