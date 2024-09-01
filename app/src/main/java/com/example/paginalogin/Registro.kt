@@ -94,6 +94,68 @@ fun RegisterPage() {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             BasicTextField(
+                value = fullName,
+                onValueChange = { fullName = it },
+                decorationBox = { innerTextField ->
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(Color.White)
+                            .padding(16.dp)
+                    ) {
+                        if (fullName.isEmpty()) {
+                            Text(
+                                text = "Telefone",
+                                color = Color(0xFFACB1B4),
+                                fontSize = 16.sp
+                            )
+                        }
+                        innerTextField()
+                    }
+                },
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    keyboardType = KeyboardType.Phone  // Altera o teclado para números de telefone
+                ),
+                textStyle = TextStyle(
+                    color = Color.Black,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            BasicTextField(
+                value = fullName,
+                onValueChange = { fullName = it },
+                decorationBox = { innerTextField ->
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(Color.White)
+                            .padding(16.dp)
+                    ) {
+                        if (fullName.isEmpty()) {
+                            Text(
+                                text = "Cidade",
+                                color = Color(0xFFACB1B4),
+                                fontSize = 16.sp
+                            )
+                        }
+                        innerTextField()
+                    }
+                },
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    keyboardType = KeyboardType.Text
+                ),
+                textStyle = TextStyle(
+                    color = Color.Black,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            BasicTextField(
                 value = email,
                 onValueChange = { email = it },
                 decorationBox = { innerTextField ->
@@ -133,7 +195,7 @@ fun RegisterPage() {
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(8.dp))
                             .background(Color.White)
-                            .padding(16.dp)
+                            .padding(3.dp)
 
 
                     ) {
@@ -145,6 +207,7 @@ fun RegisterPage() {
                             )
                         }
                         Row(
+                            Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
@@ -180,7 +243,7 @@ fun RegisterPage() {
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(8.dp))
                             .background(Color.White)
-                            .padding(16.dp)
+                            .padding(3.dp)
                     ) {
                         if (confirmPassword.isEmpty()) {
                             Text(
@@ -190,6 +253,7 @@ fun RegisterPage() {
                             )
                         }
                         Row(
+                            Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
@@ -198,6 +262,7 @@ fun RegisterPage() {
                                 Icon(
                                     painter = painterResource(
                                         if (confirmPasswordVisible) android.R.drawable.ic_menu_view else android.R.drawable.ic_menu_close_clear_cancel
+
                                     ),
                                     contentDescription = "Toggle Confirm Password Visibility"
                                 )

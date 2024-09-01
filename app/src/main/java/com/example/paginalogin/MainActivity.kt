@@ -53,7 +53,7 @@ fun LoginPage() {
                 modifier = Modifier.padding(bottom = 8.dp)
             )
             Text(
-                text = "Ao fazer login você concorda com nossos Termos e Política de Privacidade",
+                text = "Acesse a sua conta ",
                 style = TextStyle(
                     color = Color(0xFFACB1B4),
                     fontSize = 14.sp,
@@ -104,6 +104,7 @@ fun LoginPage() {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             BasicTextField(
+
                 value = password,
                 onValueChange = { password = it },
                 visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -123,6 +124,7 @@ fun LoginPage() {
                             )
                         }
                         Row(
+                            Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceAround,
                         ) {
